@@ -1,11 +1,11 @@
 import { Movie } from "./Movie";
 
 function Movies(props) {
-  const { Search = [] } = props.movies;
+  const { movies = [] } = props;
   return (
     <div className="movies">
-      {Search.length ? (
-        Search.map((movie) => {
+      {movies.length ? (
+        movies.map((movie) => {
           return <Movie key={movie.imdbID} {...movie} />;
         })
       ) : (
